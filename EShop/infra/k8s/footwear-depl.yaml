@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: footwear-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: footwear
+  template:
+    metadata:
+      labels:
+        app: footwear
+    spec:
+      containers:
+        - name: footwear
+          # image: us.gcr.io/rusnvc-eshop/auth
+          image: dcgws21rki/footwear
+          env:
+            - name: NATS_CLIENT_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name 
+            - name: NATS_URL
+              value: 'http://nats-srv:4222'
+            - name: NATS_CLUSTER_ID
+              value: footwear
+            - name: MONGO_URI
+              value: 'mongodb://footwear-mongo-srv:27017/footwear'
+            - name: JWT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_KEY
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: footwear-srv
+spec:
+  selector:
+    app: footwear
+  ports:
+  - name: footwear
+    protocol: TCP
+    port: 3000
+    targetPort: 3000

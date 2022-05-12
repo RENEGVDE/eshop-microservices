@@ -1,1 +1,5 @@
-./EShop/auth/node_modules
+EShop/auth/node_modules
+EShop/client/node_modules
+EShop/common/node_modules
+EShop/footwear/node_modules
+EShop/nats/node_modules

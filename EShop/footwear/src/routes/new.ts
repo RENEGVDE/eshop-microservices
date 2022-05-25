@@ -25,8 +25,10 @@ router.post(
       userId: req.currentUser!.id,
     });
     await footwear.save();
+
     await new FootwearCreatedPublisher(natsWrapper.client).publish({
       id: footwear.id,
+      version: footwear.version,
       title: footwear.title,
       price: footwear.price,
       userId: footwear.userId,

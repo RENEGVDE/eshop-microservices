@@ -20,13 +20,13 @@ spec:
             - name: NATS_CLIENT_ID
               valueFrom:
                 fieldRef:
-                  fieldPath: metadata.name 
+                  fieldPath: metadata.name
             - name: NATS_URL
-              value: 'http://nats-srv:4222'
+              value: "http://nats-srv:4222"
             - name: NATS_CLUSTER_ID
               value: footwear
             - name: MONGO_URI
-              value: 'mongodb://footwear-mongo-srv:27017/footwear'
+              value: "mongodb://footwear-mongo-srv:27017/footwear"
             - name: JWT_KEY
               valueFrom:
                 secretKeyRef:
@@ -41,7 +41,7 @@ spec:
   selector:
     app: footwear
   ports:
-  - name: footwear
-    protocol: TCP
-    port: 3000
-    targetPort: 3000
+    - name: footwear
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

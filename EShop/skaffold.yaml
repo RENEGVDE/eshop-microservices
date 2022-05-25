@@ -19,6 +19,7 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
+    # - image: us.gcr.io/rusnvc-eshop/footwear
     - image: dcgws21rki/footwear
       context: footwear
       docker:
@@ -27,6 +28,25 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
+    # - image: us.gcr.io/rusnvc-eshop/orders
+    - image: dcgws21rki/orders
+      context: orders
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    # - image: us.gcr.io/rusnvc-eshop/orders
+    - image: dcgws21rki/expiration
+      context: expiration
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    # - image: us.gcr.io/rusnvc-eshop/client
     - image: dcgws21rki/client
       context: client
       docker:

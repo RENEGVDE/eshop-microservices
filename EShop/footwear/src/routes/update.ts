@@ -5,6 +5,7 @@ import {
   NotFoundError,
   requireAuth,
   NotAuthorizedEroor,
+  BadRequestError,
 } from "@rusnvc/common";
 import { Footwear } from "../models/footwear";
 import { FootwearUpdatedPublisher } from "../events/publishers/footwear-updated-publisher";
@@ -27,6 +28,10 @@ router.put(
       throw new NotFoundError();
     }
 
+    if (footwear.orderId) {
+      throw new BadRequestError("Footwear reserved");
+    }
+
     if (footwear.userId !== req.currentUser!.id) {
       throw new NotAuthorizedEroor();
     }
@@ -38,6 +43,7 @@ router.put(
     await footwear.save();
     await new FootwearUpdatedPublisher(natsWrapper.client).publish({
       id: footwear.id,
+      version: footwear.version,
       title: footwear.title,
       price: footwear.price,
       userId: footwear.userId,

@@ -4,10 +4,10 @@ import { json } from "body-parser";
 import cookieSession from "cookie-session";
 import { errorHandler } from "@rusnvc/common";
 import { NotFoundError } from "@rusnvc/common";
-import { createFootwearRouter } from "./routes/new";
 import { currentUser } from "@rusnvc/common";
+import { createFootwearRouter } from "./routes/new";
 import { showFootwearRouter } from "./routes/show";
-import { indexFootwearRouter } from "./routes";
+import { indexFootwearRouter } from "./routes/index";
 import { updatedFootwearRouter } from "./routes/update";
 
 const app = express();

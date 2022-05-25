@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { updateIfCurrentPlugin } from "mongoose-update-if-current";
 
 interface FootwearAttrs {
   title: string;
@@ -10,6 +11,8 @@ interface FootwearDoc extends mongoose.Document {
   title: string;
   price: number;
   userId: string;
+  version: number;
+  orderId?: string;
 }
 
 interface FootwearModel extends mongoose.Model<FootwearDoc> {
@@ -30,6 +33,9 @@ const footwearSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    orderId: {
+      type: String,
+    },
   },
   {
     toJSON: {
@@ -40,6 +46,9 @@ const footwearSchema = new mongoose.Schema(
     },
   }
 );
+
+footwearSchema.set("versionKey", "version");
+footwearSchema.plugin(updateIfCurrentPlugin);
 
 footwearSchema.statics.build = (attr: FootwearAttrs) => {
   return new Footwear(attr);

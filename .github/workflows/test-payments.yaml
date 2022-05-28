@@ -1,0 +1,13 @@
+name: test-payments
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: cd EShop && cd payments && npm install && npm run test:ci

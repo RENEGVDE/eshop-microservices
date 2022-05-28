@@ -8,7 +8,7 @@ import { natsWrapper } from "../../nats-wrapper";
 
 it("Order cancelled", async () => {
   const footwear = Footwear.build({
-    id: new mongoose.Types.ObjectId().toHexString(),
+    id: new mongoose.Types.ObjectId().toString(),
     title: "Nike",
     price: 121,
   });
@@ -35,7 +35,7 @@ it("Order cancelled", async () => {
 
 it("Emits event", async () => {
   const footwear = Footwear.build({
-    id: new mongoose.Types.ObjectId().toHexString(),
+    id: new mongoose.Types.ObjectId().toString(),
     title: "Nike",
     price: 121,
   });

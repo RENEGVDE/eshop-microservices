@@ -5,21 +5,21 @@ import { Footwear } from "../../models/footwear";
 
 it("Returns orders", async () => {
   const footwear = Footwear.build({
-    id: new mongoose.Types.ObjectId().toHexString(),
+    id: new mongoose.Types.ObjectId().toString(),
     title: "Nike",
     price: 121,
   });
   await footwear.save();
 
   const footwear2 = Footwear.build({
-    id: new mongoose.Types.ObjectId().toHexString(),
+    id: new mongoose.Types.ObjectId().toString(),
     title: "Adidas",
     price: 111,
   });
   await footwear2.save();
 
   const footwear3 = Footwear.build({
-    id: new mongoose.Types.ObjectId().toHexString(),
+    id: new mongoose.Types.ObjectId().toString(),
     title: "Puma",
     price: 98,
   });

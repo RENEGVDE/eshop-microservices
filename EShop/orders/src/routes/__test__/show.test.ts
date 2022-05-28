@@ -5,7 +5,7 @@ import { Footwear } from "../../models/footwear";
 
 it("Fetch order", async () => {
   const footwear = Footwear.build({
-    id: new mongoose.Types.ObjectId().toHexString(),
+    id: new mongoose.Types.ObjectId().toString(),
     title: "Nike",
     price: 121,
   });

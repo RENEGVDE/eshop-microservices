@@ -35,7 +35,7 @@ afterAll(async () => {
 
 global.getCookie = () => {
   const payload = {
-    id: new mongoose.Types.ObjectId().toHexString(),
+    id: new mongoose.Types.ObjectId().toString(),
     email: "test@test.com",
   };
 

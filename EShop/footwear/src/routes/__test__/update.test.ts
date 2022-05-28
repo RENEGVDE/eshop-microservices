@@ -3,7 +3,7 @@ import { app } from "../../app";
 import mongoose from "mongoose";
 
 it("returns 404 if wrong id", async () => {
-  const id = new mongoose.Types.ObjectId().toHexString();
+  const id = new mongoose.Types.ObjectId().toString();
   await request(app)
     .put(`/api/footwear/${id}`)
     .set("Cookie", global.getCookie())
@@ -15,7 +15,7 @@ it("returns 404 if wrong id", async () => {
 });
 
 it("returns 401 if not auth", async () => {
-  const id = new mongoose.Types.ObjectId().toHexString();
+  const id = new mongoose.Types.ObjectId().toString();
   await request(app)
     .put(`/api/footwear/${id}`)
     .send({

@@ -3,7 +3,7 @@ import { app } from "../../app";
 import mongoose from "mongoose";
 
 it("returns 404 if not found", async () => {
-  const id = new mongoose.Types.ObjectId().toHexString();
+  const id = new mongoose.Types.ObjectId().toString();
   await request(app).get(`/api/footwear/${id}`).send().expect(404);
 });
 

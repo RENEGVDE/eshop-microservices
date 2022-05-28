@@ -1,4 +1,4 @@
-name: CI
+name: test-auth
 on:
   push:
     branches: [ main ]

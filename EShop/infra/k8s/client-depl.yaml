@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: client
-          # image: us.gcr.io/rusnvc-eshop/client
-          image: dcgws21rki/client
+          image: us.gcr.io/rusnvc-eshop/client
+          # image: dcgws21rki/client
 ---
 apiVersion: v1
 kind: Service

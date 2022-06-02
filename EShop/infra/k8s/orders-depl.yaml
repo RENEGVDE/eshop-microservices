@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: orders
-          # image: us.gcr.io/rusnvc-eshop/orders
-          image: dcgws21rki/orders
+          image: us.gcr.io/rusnvc-eshop/orders
+          # image: dcgws21rki/orders
           env:
             - name: NATS_CLIENT_ID
               valueFrom:

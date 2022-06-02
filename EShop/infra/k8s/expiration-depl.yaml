@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: expiration
-          # image: us.gcr.io/rusnvc-eshop/auth
-          image: dcgws21rki/expiration
+          image: us.gcr.io/rusnvc-eshop/expiration
+          # image: dcgws21rki/expiration
           env:
             - name: NATS_CLIENT_ID
               valueFrom:

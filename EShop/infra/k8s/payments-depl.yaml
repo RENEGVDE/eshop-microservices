@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: payments
-          # image: us.gcr.io/rusnvc-eshop/payments
-          image: dcgws21rki/payments
+          image: us.gcr.io/rusnvc-eshop/payments
+          # image: dcgws21rki/payments
           env:
             - name: NATS_CLIENT_ID
               valueFrom:

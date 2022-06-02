@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: auth
-          # image: us.gcr.io/rusnvc-eshop/auth
-          image: dcgws21rki/auth
+          image: us.gcr.io/rusnvc-eshop/auth
+          # image: dcgws21rki/auth
           env:
             - name: MONGO_URI
               value: "mongodb://auth-mongo-srv:27017/auth"

@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: footwear
-          # image: us.gcr.io/rusnvc-eshop/auth
-          image: dcgws21rki/footwear
+          image: us.gcr.io/rusnvc-eshop/footwear
+          # image: dcgws21rki/footwear
           env:
             - name: NATS_CLIENT_ID
               valueFrom:

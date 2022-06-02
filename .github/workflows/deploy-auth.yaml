@@ -1,5 +1,4 @@
-name: CD
-
+name: CD-auth
 on:
   push:
     branches: [ main ]

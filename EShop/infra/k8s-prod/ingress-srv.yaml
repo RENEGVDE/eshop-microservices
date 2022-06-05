@@ -7,7 +7,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: rusnvc.dev
+    - host: 34.76.34.173
       http:
         paths:
           - path: /api/payments/?(.*)

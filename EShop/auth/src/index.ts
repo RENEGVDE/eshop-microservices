@@ -2,9 +2,9 @@ import mongoose from "mongoose";
 
 import { app } from "./app";
 
-console.log("start !")
-
 const start = async () => {
+  console.log("start !")
+
   if (!process.env.JWT_KEY) {
     throw new Error("JWT_KEY undef");
   }

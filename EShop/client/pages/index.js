@@ -5,7 +5,7 @@ const LandingPage = ({ currentUser, footwear }) => {
     console.log(footwear)
     return (
         <div>
-            <h2>Footwear</h2>
+            <h1>Footwear</h1>
             <table className="table">
                 <thead>
                     <tr>

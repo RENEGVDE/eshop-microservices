@@ -7,7 +7,7 @@ import { PaymentCreatedListener } from "./events/listeners/payment-created-liste
 import { natsWrapper } from "./nats-wrapper";
 
 const start = async () => {
-  console.log("start !")
+  console.log("start")
   
   if (!process.env.JWT_KEY) {
     throw new Error("JWT_KEY undef");

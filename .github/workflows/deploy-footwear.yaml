@@ -16,7 +16,7 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       - run: docker push dcgws21rki/footwear
-      - uses: google-github-actions/footwear@v0
+      - uses: google-github-actions/auth@v0
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
       - run: gcloud container clusters get-credentials rusnvc-dev --zone=europe-west1-b

@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 import { app } from "./app";
 
-console.log("start")
+console.log("start !")
 
 const start = async () => {
   if (!process.env.JWT_KEY) {

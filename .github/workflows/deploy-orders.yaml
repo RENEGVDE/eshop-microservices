@@ -1,0 +1,23 @@
+name: CD-orders
+on:
+  push:
+    branches: [ main ]
+    paths: 
+      - 'EShop/orders/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: cd EShop && cd orders && docker build -t dcgws21rki/orders .
+      - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      - run: docker push dcgws21rki/orders
+      - uses: google-github-actions/orders@v0
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+      - run: gcloud container clusters get-credentials rusnvc-dev --zone=europe-west1-b
+      - run: kubectl rollout restart deployment orders-depl

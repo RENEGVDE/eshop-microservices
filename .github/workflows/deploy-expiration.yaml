@@ -1,0 +1,23 @@
+name: CD-expiration
+on:
+  push:
+    branches: [ main ]
+    paths: 
+      - 'EShop/expiration/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: cd EShop && cd expiration && docker build -t dcgws21rki/expiration .
+      - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      - run: docker push dcgws21rki/expiration
+      - uses: google-github-actions/expiration@v0
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+      - run: gcloud container clusters get-credentials rusnvc-dev --zone=europe-west1-b
+      - run: kubectl rollout restart deployment expiration-depl

@@ -15,4 +15,4 @@ jobs:
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
       - run: gcloud container clusters get-credentials rusnvc-dev --zone=europe-west1-b
-      - run: kubectl apply -f infra/k8s && kubectl apply -f infra/k8s-prod
+      - run: kubectl apply -f EShop/infra/k8s && kubectl apply -f EShop/infra/k8s-prod

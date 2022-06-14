@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Router from 'next/router'
 import useRequest from '../../hooks/use-request'
 
-const signin = () => {
+export default () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const { doRequest, errors } = useRequest({
@@ -21,7 +21,7 @@ const signin = () => {
     }
 
     return (
-        <div className='container' fluid>
+        <div className='container' fluid='true'>
             <form onSubmit={onSubmit}>
                 <h1>Signin</h1>
                 <div className="form-group">
@@ -39,4 +39,4 @@ const signin = () => {
     )
 }
 
-export default signin
+// export default signin

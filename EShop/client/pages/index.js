@@ -42,7 +42,7 @@ LandingPage.getInitialProps = async (context, client, currentUser) => {
 
     // return data
 
-    const { data } = await client.get('/api/footwear')
+    const { data } = await client.get('/api/footwear').catch(err => console.log(err.message))
 
     return { footwear: data }
 }

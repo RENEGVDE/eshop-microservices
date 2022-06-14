@@ -19,5 +19,5 @@ jobs:
       - uses: google-github-actions/auth@v0
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
-      - run: gcloud container clusters get-credentials rusnvc-dev --zone=europe-west1-b
+      - run: gcloud container clusters get-credentials rusnvc-eshop --zone=europe-west1-b
       - run: kubectl rollout restart deployment footwear-depl

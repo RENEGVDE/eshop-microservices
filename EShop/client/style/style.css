@@ -1,0 +1,21 @@
+.center-cropped {
+    width: 100px;
+    height: 100px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.wide-cropped {
+    width: 50vh;
+    height: 50vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.purchase-img{
+    height: 50vh;
+}
+
+.purchase-card img { 
+    object-fit: cover; 
+}

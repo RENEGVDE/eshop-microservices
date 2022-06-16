@@ -13,7 +13,7 @@ export default ({ currentUser }) => {
             return (
                 <li key={href} className="nav-item">
                     <Link href={href}>
-                        <a className='nav-link'>{label}</a>
+                        <a className='nav-link nv-lnk'>{label}</a>
                     </Link>
                 </li>
             )
@@ -22,7 +22,7 @@ export default ({ currentUser }) => {
     return (
         <nav className="navbar navbar-dark bg-dark">
             <Link href="/">
-                <a className='navbar-brand'>RUSNVC</a>
+                <a className='navbar-brand mx-3'>RUSNVC</a>
             </Link>
 
             <div className='d-flex justify-content-end'>

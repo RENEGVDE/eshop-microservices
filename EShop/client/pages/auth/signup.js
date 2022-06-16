@@ -34,7 +34,7 @@ export default () => {
                     <input value={password} onChange={e => setPassword(e.target.value)} type="password" className="form-control" />
                 </div>
                 {errors}
-                <button className="btn btn-primary">Signup</button>
+                <button className="btn btn-primary mt-3">Signup</button>
             </form>
         </div>
     )

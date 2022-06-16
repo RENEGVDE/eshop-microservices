@@ -19,3 +19,20 @@
 .purchase-card img { 
     object-fit: cover; 
 }
+
+.nv-lnk{
+    color: white;
+}
+
+.nv-lnk:hover{
+    color: red;
+}
+
+.bg-dark {
+    --bs-bg-opacity: 1;
+    background-color:rgb(30, 30, 30) !important;
+}
+
+body {
+    background-color: rgb(240, 240, 240);
+}

@@ -30,6 +30,7 @@ const Footwear = ({ item }) => {
                 <div className="card-body">
                     <h1 className="card-title">{item.title}</h1>
                     <p className="card-text">Price: {item.price} €</p>
+                    {errors}
                     <button onClick={() => doRequest()} className="btn btn-primary">Purchase</button>
                 </div>
             </div>

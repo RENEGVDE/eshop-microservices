@@ -25,4 +25,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: cd EShop && cd client && npm run cy:headless
+      - run: cd EShop && cd client && npm install
+      - run: npm run cy:headless
+      - uses: cypress-io/github-action@v4

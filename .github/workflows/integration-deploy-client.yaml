@@ -1,4 +1,4 @@
-name: CD-client
+name: Integration & CD-client
 on:
   push:
     branches: [ main ]
@@ -21,8 +21,8 @@ jobs:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
       - run: gcloud container clusters get-credentials rusnvc-eshop --zone=europe-west1-b
       - run: kubectl rollout restart deployment client-depl
-#       - run: cd EShop && cd client && npm install
-#       - run: cd EShop && cd client && npm run cy:headless
+      - run: cd EShop && cd client && npm install
+      - run: cd EShop && cd client && npm run cy:headless
 #   integration:
 #     runs-on: ubuntu-latest
 #     steps:

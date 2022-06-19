@@ -1,4 +1,4 @@
-name: Cypress
+name: cypress
 on:
   push:
     branches: [ main ]

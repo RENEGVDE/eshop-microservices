@@ -6,7 +6,7 @@ on:
       - 'EShop/client/**'
 
 jobs:
-  build:
+  build-integration:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -21,10 +21,12 @@ jobs:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
       - run: gcloud container clusters get-credentials rusnvc-eshop --zone=europe-west1-b
       - run: kubectl rollout restart deployment client-depl
-  integration:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
       - run: cd EShop && cd client && npm install
       - run: cd EShop && cd client && npm run cy:headless
-      - uses: cypress-io/github-action@v4
+#   integration:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - run: cd EShop && cd client && npm install
+#       - run: cd EShop && cd client && npm run cy:headless
+#       - uses: cypress-io/github-action@v4

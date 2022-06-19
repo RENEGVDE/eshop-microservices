@@ -69,4 +69,5 @@ LandingPage.getInitialProps = async (context, client, currentUser) => {
     return { footwear: data }
 }
 
+
 export default LandingPage

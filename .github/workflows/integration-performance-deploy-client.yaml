@@ -1,4 +1,4 @@
-name: Integration & CD-client
+name: Performance, Integration & CD-client
 on:
   push:
     branches: [ main ]
@@ -25,11 +25,12 @@ jobs:
       - run: cd EShop && cd client && npm install
       - run: cd EShop && cd client && npm run cy:headless
       
+      - run: cd EShop && cd client && cd k6
       - uses: grafana/k6-action@v0.2.0
-#         with:
-#           filename: test.js
-      - run: cd EShop && cd client && cd k6 && k6 run client-perf-test.js
-      - run: cd EShop && cd client && cd k6 && k6 run api-perf-test.js
+        with:
+          filename: test.js
+#       - run: cd EShop && cd client && cd k6 && k6 run client-perf-test.js
+#       - run: cd EShop && cd client && cd k6 && k6 run api-perf-test.js
           
           
 #   integration:

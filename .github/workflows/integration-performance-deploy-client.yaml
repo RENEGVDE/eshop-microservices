@@ -22,11 +22,9 @@ jobs:
       - run: gcloud container clusters get-credentials rusnvc-eshop --zone=europe-west1-b
       - run: kubectl rollout restart deployment client-depl
       
-      - name: Cypress integration
       - run: cd EShop && cd client && npm install
       - run: cd EShop && cd client && npm run cy:headless
       
-      - name: k6 performance
       - uses: grafana/k6-action@v0.2.0
 #         with:
 #           filename: test.js

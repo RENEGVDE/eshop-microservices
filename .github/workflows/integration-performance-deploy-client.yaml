@@ -28,11 +28,11 @@ jobs:
 #       - run: cd EShop && cd client && cd k6
       - uses: grafana/k6-action@v0.2.0
         with:
-          filename: EShop\client\k6\client-perf-test.js
+          filename: client-perf-test.js
 #       - run: cd EShop && cd client && cd k6
       - uses: grafana/k6-action@v0.2.0
         with:
-          filename: EShop\client\k6\api-perf-test.js
+          filename: api-perf-test.js
           
 #       - run: cd EShop && cd client && cd k6 && k6 run client-perf-test.js
 #       - run: cd EShop && cd client && cd k6 && k6 run api-perf-test.js

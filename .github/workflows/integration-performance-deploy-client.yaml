@@ -25,14 +25,14 @@ jobs:
       - run: cd EShop && cd client && npm install
       - run: cd EShop && cd client && npm run cy:headless
       
-      - run: cd EShop && cd client && cd k6
+#       - run: cd EShop && cd client && cd k6
       - uses: grafana/k6-action@v0.2.0
         with:
-          filename: client-perf-test.js
-      - run: cd EShop && cd client && cd k6
+          filename: EShop\client\k6\client-perf-test.js
+#       - run: cd EShop && cd client && cd k6
       - uses: grafana/k6-action@v0.2.0
         with:
-          filename: api-perf-test.js
+          filename: EShop\client\k6\api-perf-test.js
           
 #       - run: cd EShop && cd client && cd k6 && k6 run client-perf-test.js
 #       - run: cd EShop && cd client && cd k6 && k6 run api-perf-test.js
